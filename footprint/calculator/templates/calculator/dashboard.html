@@ -1,0 +1,44 @@
+{% load plotly_dash %}
+{% load static %}
+
+{% load static %}
+<!DOCTYPE htlm>
+<html lang="en">
+    <head>
+        <style>
+            body {
+               margin: 50px; 
+            }
+        </style>
+        <title style="display: inline-block;"> Carbon Calculator </title>
+        <img src="{% static 'images/logo.png' %}" width="200" style="float: right">
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/custom.css' %}"> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            body {
+               margin: 25px; 
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>GHG Summary</h1>
+        
+        <div class="center-container">
+            <a href="{% url 'view_data' %}" class="btn btn-primary">View data</a>
+            <a href="{% url 'calculator' %}" class="btn btn-primary">Input data</a>
+        </div>
+
+        <br>
+        
+        <!-- Include the Dash app -->
+        <div class="custom">
+            {% plotly_app name="SimpleExample" %}
+        </div>
+
+
+    </body>
+
+
+</html>

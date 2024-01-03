@@ -1,0 +1,15 @@
+{% extends "calculator/layout.html" %}
+
+{% block body %}
+
+
+<h1>Update Data</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update</button>
+</form>
+
+<a href="{% url 'view_data' %}" class="btn btn-primary">Back</a>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "calculator/layout.html" %}
+
+{% block body %}
+    <h1> GHG Inventory Data Input<h1>
+
+    <form action="{% url 'calculator' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+
+    </form>
+
+    <div class="center-container">
+        <a href="{% url 'view_data' %}" class="btn btn-primary">View data</a>
+        <a href="{% url 'dashboard' %}" class="btn btn-primary">Dashboard</a>
+    </div>
+
+{% endblock %}
